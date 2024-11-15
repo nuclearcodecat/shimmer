@@ -210,6 +210,40 @@
 
 /*! === urlbar === */
 
+/*! === urlbar === */
+/* Overlay için yeni element */
+#urlbar-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1;
+}
+
+/* URL bar extend olduğunda overlay'i göster */
+#urlbar[breakout-extend] ~ #urlbar-container::after {
+  opacity: 1;
+}
+
+/* URL bar'ın kendisi için z-index ayarı */
+#urlbar[breakout-extend] {
+  z-index: 2;
+  width: 100vw !important;
+  position: absolute !important;
+  margin-top: 10vh !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  max-width: 70vw !important;
+  background: transparent !important;
+}
+
 /*? rounded url bar and box */
 #urlbar-background {
   background: var(--toolbar-field-background-color) !important;
@@ -232,35 +266,47 @@
 /*? make the background of extended urlbar move down and BROKEN drop a blur behing */
 #urlbar[breakout-extend] {
   width: 100vw !important;
-  position: absolute !important;
+  position: fixed !important;
   margin-top: 10vh !important;
-  /* margin-left: 8vw !important; */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   z-index: 9999 !important;
   transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
   max-width: 70vw !important;
-  /* backdrop-filter: blur(8px) !important; */
-  background: rgba(0, 0, 0, 0) !important;
-  /* border-radius: 20px; */
+  background: transparent !important;
 }
 
+/* Yeni overlay yaklaşımı */
+#main-window::after {
+  content: '';
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, transparent) !important;
+  z-index: 9998;
+}
+
+#main-window:has(#urlbar[breakout-extend])::after {
+  display: block;
+}
+
+/* URL bar'ın kendisi için orijinal renk */
 #urlbar[breakout-extend] #urlbar-background {
   background: var(--toolbar-field-focus-background-color) !important;
   transition: all 0.1s linear !important;
 }
 
-/*? urlbox backdrop */
-#urlbar[breakout-extend]::before{
-  content: '' !important;
+#urlbar[breakout-extend] {
   width: 100vw !important;
-  height: 100vh !important;
-  position: fixed !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
-  top: 0 !important;
-  left: 0 !important;
-  background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
+  position: absolute !important;
+  margin-top: 10vh !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  max-width: 70vw !important;
+  background: transparent !important;
 }
-
 
 @media (min-width: 800px) {
   /*? urlbar bigger text */
