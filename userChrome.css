@@ -274,9 +274,19 @@
   border-radius: var(--shimmer-urlbar-rounding) !important;
 }
 
+/* Base URL bar styling */
 #urlbar-input {
   margin-right: 40px !important;
+}
+
+/* Center text only when not extended */
+#urlbar:not([breakout-extend]) #urlbar-input {
   text-align: center !important;
+}
+
+/* Left align text when extended */
+#urlbar[breakout-extend] #urlbar-input {
+  text-align: left !important;
 }
 
 .urlbarView-row {
@@ -583,6 +593,27 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*! === sidebar === */
+/* Browser window rounded corners and spacing */
+#tabbrowser-tabpanels {
+  border-radius: var(--shimmer-browser-border-radius) !important;
+  margin-right: 4px !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+/* Main browser window rounded corners */
+#browser {
+  border-radius: var(--shimmer-browser-border-radius) !important;
+  margin-right: 4px !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+/* Maintain rounded corners */
+.browserContainer {
+  border-radius: var(--shimmer-browser-border-radius) !important;
+  overflow: hidden !important;
+}
 /*? hide header, or give good color */
 @media not (-moz-bool-pref: "shimmer.show-sidebar-header") {
   #sidebar-header {
