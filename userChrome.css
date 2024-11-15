@@ -209,61 +209,8 @@
 }
 
 /*! === urlbar === */
-
 /*! === urlbar === */
-/* Overlay için yeni element */
-#urlbar-container::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 1;
-}
-
-/* URL bar extend olduğunda overlay'i göster */
-#urlbar[breakout-extend] ~ #urlbar-container::after {
-  opacity: 1;
-}
-
-/* URL bar'ın kendisi için z-index ayarı */
-#urlbar[breakout-extend] {
-  z-index: 2;
-  width: 100vw !important;
-  position: absolute !important;
-  margin-top: 10vh !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-  max-width: 70vw !important;
-  background: transparent !important;
-}
-
-/*? rounded url bar and box */
-#urlbar-background {
-  background: var(--toolbar-field-background-color) !important;
-  /* background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, rgba(0, 0, 0, 255)) !important; */
-  border-radius: var(--shimmer-urlbar-rounding) !important;
-  transition: all 0.1s linear !important;
-}
-
-/*? rounded buttons inside urlbar (firefox logo on about pages, padlock, trans, etc.) */
-#identity-box > box, #tracking-protection-icon-container, #page-action-buttons > *, #urlbar-revert-button-container, #urlbar-searchmode-switcher {
-  border-radius: var(--shimmer-urlbar-rounding) !important;
-}
-
-/*? needed for popup transition to work */
-#urlbar {
-  margin-top: 0 !important;
-  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-}
-
-/*? make the background of extended urlbar move down and BROKEN drop a blur behing */
+/* Main URL bar extend behavior and styling */
 #urlbar[breakout-extend] {
   width: 100vw !important;
   position: fixed !important;
@@ -276,7 +223,7 @@
   background: transparent !important;
 }
 
-/* Yeni overlay yaklaşımı */
+/* Overlay styling */
 #main-window::after {
   content: '';
   display: none;
@@ -290,80 +237,62 @@
   display: block;
 }
 
-/* URL bar'ın kendisi için orijinal renk */
+/* URL bar background when extended */
 #urlbar[breakout-extend] #urlbar-background {
   background: var(--toolbar-field-focus-background-color) !important;
   transition: all 0.1s linear !important;
 }
 
-#urlbar[breakout-extend] {
-  width: 100vw !important;
-  position: absolute !important;
-  margin-top: 10vh !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 9999 !important;
-  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-  max-width: 70vw !important;
-  background: transparent !important;
-}
-
+/* URL bar text styling when extended */
 @media (min-width: 800px) {
-  /*? urlbar bigger text */
   #urlbar[breakout-extend] #urlbar-input {
     font-size: 1.5rem !important;
   }
-
-  /*? taller urlbar for bigger text when extended */
   #urlbar[breakout-extend] .urlbar-input-container {
     height: 48px !important;
   }
 }
 
-/*? centered text when urlbar not in use */
-#urlbar:not(:is([breakout-extend])) #urlbar-input {
+/* Base URL bar styling */
+#urlbar {
+  margin-top: 0 !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+#urlbar-background {
+  background: var(--toolbar-field-background-color) !important;
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+  transition: all 0.1s linear !important;
+}
+
+/* Additional URL bar styling */
+#identity-box > box, 
+#tracking-protection-icon-container, 
+#page-action-buttons > *, 
+#urlbar-revert-button-container, 
+#urlbar-searchmode-switcher {
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+}
+
+#urlbar-input {
+  margin-right: 40px !important;
   text-align: center !important;
 }
 
-/*? center the text further */
-#urlbar-input {
-  margin-right: 40px !important /* width of identity box */;
+.urlbarView-row {
+  border-radius: var(--shimmer-urlbar-inner-rounding) !important;
 }
 
-/*? hide search one offs */
-@media not (-moz-bool-pref: "shimmer.show-search-one-offs") {
-  .search-one-offs {
-    display: none !important;
-  }
+.urlbarView {
+  padding: 0 5px !important;
 }
 
-/*? fix for floating urlbar */
-@media (-moz-bool-pref: "shimmer.nightly") { 
-  #urlbar:not([breakout-extend]) {
-    top: auto !important;
-  }
-}
-
-/*? hide 1px line below urlbar */
 .urlbarView-body-inner {
-  border-top: none !important;
+  border: 0 !important;
 }
 
-/*? hide border below top bar */
-#navigator-toolbox {
-  border: 0px !important;
-}
-
-/*? make rounded borders have nice color */
-#browser {
-  background: var(--toolbar-bgcolor) !important;
-}
-
-#toolbar-menubar {
-  display: none !important;
-}
-.titlebar-spacer {
-  display: none !important;
+#urlbar-results {
+  padding-bottom: 8px !important;
 }
 
 /*! === findbar === */
