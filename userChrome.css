@@ -899,6 +899,25 @@ treecol {
   } */
 }
 
+/* Added MacOS specific settings to revert changes to titlebar to default position */
+@supports (-moz-osx-font-smoothing: grayscale) {
+  .titlebar-buttonbox-container {
+    position: fixed !important;
+    left: 0 !important;
+    padding: 4px !important;
+    direction: ltr !important;
+    z-index: 3 !important;
+  }
+
+  .titlebar-buttonbox {
+    margin-left: 8px !important;
+    height: 28px !important;
+  }
+
+  #navigator-toolbox {
+    padding-left: 70px !important;
+  }
+}
 
 /* review:  todo, change, fix */
 /*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
