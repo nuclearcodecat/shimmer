@@ -1183,6 +1183,59 @@ treecol {
 	box-shadow: 0px 1px 3px 2px rgba(0,0,0,.15) !important;
 }
 
+/*  Remove all phantom layout gaps in FF137+ */
+
+:root {
+	--tab-min-height: 38px !important;
+	--tab-toolbar-height: 38px !important;
+  }
+  
+  /*  Reset tab bar height and spacing */
+  #TabsToolbar {
+	min-height: var(--tab-min-height) !important;
+	max-height: var(--tab-min-height) !important;
+	height: var(--tab-min-height) !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	box-sizing: border-box !important;
+  }
+  
+  /*  Remove ALL left spacing from all container levels */
+  #main-window,
+  #navigator-toolbox,
+  #browser,
+  #appcontent,
+  .browserStack,
+  #tabbrowser-tabbox,
+  #tabbrowser-tabpanels,
+  #PersonalToolbar,
+  #nav-bar,
+  #titlebar,
+  #toolbar-menubar {
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+	border-left: none !important;
+	left: 0px !important;
+	position: relative !important;
+	box-sizing: border-box !important;
+	width: 100% !important;
+	max-width: 100% !important;
+  }
+  
+  /*  Force grid layout to break if Firefox is enforcing it */
+  #navigator-toolbox {
+	display: block !important;
+	grid-template-columns: none !important;
+	grid-template-rows: none !important;
+  }
+  
+  /* Optional: disable custom themes affecting padding */
+  .titlebar-spacer,
+  .titlebar-buttonbox-container,
+  .titlebar-buttonbox {
+	margin: 0 !important;
+	padding: 0 !important;
+  }
 
 /* review:	todo, change, fix */
 /*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
