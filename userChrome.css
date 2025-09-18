@@ -324,11 +324,11 @@
 /*! === navbar === */
 
 /*? rounded urlbar and box */
-:root[chromehidden*="menubar toolbar directories extrachrome"] #urlbar-background { 
+:root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background { 
 	background: rgba(0, 0, 0, 0) !important;
 	border: 0 !important;
 }
-:root:not([chromehidden*="menubar toolbar directories extrachrome"]) #urlbar-background { 
+:root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background { 
 	background: var(--toolbar-field-background-color) !important;
 	border: 1px solid var(--toolbar-field-border-color) !important;
 }
@@ -375,18 +375,18 @@
 }
 
 @media not -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] #urlbar-background {
+	#urlbar[breakout-extend] .urlbar-background {
 		transition: all 0.1s linear !important;
 	}
 }
 
 @media -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] #urlbar-background {
+	#urlbar[breakout-extend] .urlbar-background {
 		transition: none !important;
 	}
 }
 
-#urlbar[breakout-extend] #urlbar-background {
+#urlbar[breakout-extend] .urlbar-background {
 	background: var(--toolbar-field-focus-background-color) !important;
 }
 
