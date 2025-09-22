@@ -51,6 +51,16 @@
 	/*? disable opacity change when tabbed out */
 	--inactive-titlebar-opacity: 1 !important;
 	--splitter-width: var(--shimmer-sidebar-splitter-width) !important;
+
+	/* tab group lighter colors */
+	--tab-group-color-blue: var(--color-blue-50) !important;
+  --tab-group-color-purple: var(--color-purple-50) !important;
+  --tab-group-color-cyan: var(--color-cyan-50) !important;
+  --tab-group-color-orange: var(--color-orange-50) !important;
+  --tab-group-color-yellow: var(--color-yellow-50) !important;
+  --tab-group-color-pink: var(--color-pink-50) !important;
+  --tab-group-color-green: var(--color-green-50) !important;
+  --tab-group-color-red: var(--color-red-50) !important;
 }
 
 /*? customize context menu */
@@ -752,12 +762,65 @@ findbar:not([hidden]) {
 	max-width: var(--shimmer-tab-max-width) !important;
 }
 
-/*? tab groups fix :3 */
+/*? tab groups :3 */
 #tabbrowser-tabs[orient="horizontal"] tab-group[collapsed] .tabbrowser-tab[fadein]:not([pinned]) {
 	/*? min tab width */
 	min-width: 0 !important;
 	/*? max tab width */
 	max-width: 0 !important;
+}
+
+.tab-group-label-container {
+	height: 100%;
+	padding: 4px 0px;
+}
+
+.tab-group-label {
+	height: 100%;
+	display: flex;
+	align-items: center !important;
+	padding: 0px 8px !important;
+	border-radius: var(--shimmer-tab-border-radius) !important;
+  color: light-dark(var(--tab-group-color-pale), var(--tab-group-color-pale)) !important;
+  background-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+
+	tab-group[collapsed] > .tab-group-label-container > & {
+			background-color: light-dark(var(--tab-group-color-pale), var(--tab-group-color)) !important;
+			color: light-dark(var(--tab-group-color), var(--tab-group-color-pale)) !important;
+      outline: 1px solid light-dark(color-mix(in srgb, var(--tab-group-color) 25%, #fff), color-mix(in srgb, var(--tab-group-color) 90%, #fff)) !important;
+			outline-offset: -1px !important;
+	 }
+}
+
+tab-group {
+    --tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+
+  &[collapsed] {
+    --tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+  }
+}
+
+/* collapse selected tab to icon only when you close the tab group it's in */
+#tabbrowser-tabs[orient="horizontal"] tab-group[collapsed] .tabbrowser-tab[fadein][visuallyselected] {
+	max-width: 0 !important;
+	min-width: 38px !important;
+
+	.tab-content {
+		display: flex;
+		justify-content: center;
+
+		.tab-icon-image {
+			margin-inline-end: 0 !important;
+		}
+
+		.tab-label-container {
+			display: none;
+		}
+
+		.tab-close-button {
+			display: none;
+		}
+	}
 }
 
 /*? make tab background round and small */
