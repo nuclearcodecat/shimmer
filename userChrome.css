@@ -770,8 +770,21 @@ findbar:not([hidden]) {
 	max-width: 0 !important;
 }
 
+#tabbrowser-tabs[orient="horizontal"] {
+	.tab-group-label-container {
+		height: 100%;
+	}
+}
+
+.tab-group-label {
+  #tabbrowser-tabs[orient="vertical"] & {
+    #tabbrowser-tabs[expanded] & {
+		max-width: none !important;
+		}
+	}
+}
+
 .tab-group-label-container {
-	height: 100%;
 	padding: 4px 0px;
 }
 
