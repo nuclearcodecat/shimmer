@@ -770,6 +770,9 @@ findbar:not([hidden]) {
 	max-width: 0 !important;
 }
 
+/* pr #69 */
+/* add more comments */
+/* fix tabulation */
 #tabbrowser-tabs[orient="horizontal"] {
 	.tab-group-label-container {
 		height: 100%;
@@ -793,7 +796,6 @@ findbar:not([hidden]) {
 	display: flex;
 	align-items: center !important;
 	padding: 0px 8px !important;
-	border-radius: var(--shimmer-tab-border-radius) !important;
   color: light-dark(var(--tab-group-color-pale), var(--tab-group-color-pale)) !important;
   background-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
 
@@ -835,6 +837,15 @@ tab-group {
 		}
 	}
 }
+
+/* +nuclearcodecat */
+.tab-group-label {
+	margin-bottom: -1px !important;
+	border-bottom-left-radius: unset !important;
+	border-bottom-right-radius: unset !important;
+}
+
+/* pr #69 end */
 
 /*? make tab background round and small */
 .tab-background {
