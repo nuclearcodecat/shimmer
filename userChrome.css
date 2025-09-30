@@ -51,6 +51,16 @@
 	/*? disable opacity change when tabbed out */
 	--inactive-titlebar-opacity: 1 !important;
 	--splitter-width: var(--shimmer-sidebar-splitter-width) !important;
+
+	/* tab group lighter colors */
+	--tab-group-color-blue: var(--color-blue-50) !important;
+  --tab-group-color-purple: var(--color-purple-50) !important;
+  --tab-group-color-cyan: var(--color-cyan-50) !important;
+  --tab-group-color-orange: var(--color-orange-50) !important;
+  --tab-group-color-yellow: var(--color-yellow-50) !important;
+  --tab-group-color-pink: var(--color-pink-50) !important;
+  --tab-group-color-green: var(--color-green-50) !important;
+  --tab-group-color-red: var(--color-red-50) !important;
 }
 
 /*? customize context menu */
@@ -285,7 +295,7 @@
 	}
 	& .toolbarbutton-badge-stack {
 		padding: 0 !important;
-	} 
+	}
 }
 
 #firefox-view-button {
@@ -324,11 +334,11 @@
 /*! === navbar === */
 
 /*? rounded urlbar and box */
-:root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background { 
+:root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background {
 	background: rgba(0, 0, 0, 0) !important;
 	border: 0 !important;
 }
-:root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background { 
+:root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background {
 	background: var(--toolbar-field-background-color) !important;
 	border: 1px solid var(--toolbar-field-border-color) !important;
 }
@@ -355,7 +365,7 @@
 		/* backdrop-filter: blur(8px) !important; */
 		background: rgba(0, 0, 0, 0) !important;
 		/* border-radius: 20px; */
-	}  
+	}
 }
 
 @media not -moz-pref("shimmer.disable-popover-transition") {
@@ -432,7 +442,7 @@
 }
 
 /*? fix for floating urlbar */
-@media -moz-pref("shimmer.nightly") { 
+@media -moz-pref("shimmer.nightly") {
 	#urlbar:not([breakout-extend]) {
 		top: auto !important;
 	}
@@ -605,7 +615,7 @@ findbar:not([hidden]) {
 	box-shadow: 0 0 0px 1px var(--lwt-accent-color);
 	clip-path: inset(0 -0.3rem 0 0);
 }
-.findbar-textbox { 
+.findbar-textbox {
 	z-index: 10 !important;
 }
 
@@ -752,13 +762,85 @@ findbar:not([hidden]) {
 	max-width: var(--shimmer-tab-max-width) !important;
 }
 
-/*? tab groups fix :3 */
+/*? tab groups :3 */
 #tabbrowser-tabs[orient="horizontal"] tab-group[collapsed] .tabbrowser-tab[fadein]:not([pinned]) {
 	/*? min tab width */
 	min-width: 0 !important;
 	/*? max tab width */
 	max-width: 0 !important;
 }
+
+/* pr #69 */
+
+/*? make horizontal tab group label the same height as tabs */
+#tabbrowser-tabs[orient="horizontal"] {
+	.tab-group-label-container {
+		height: 100%;
+	}
+}
+
+.tab-group-label-container {
+	padding: 4px 0px;
+}
+
+/*? style tab group label alignment */
+.tab-group-label {
+	height: 100%;
+	display: flex;
+	align-items: center !important;
+	padding: 0px 8px !important;
+	/*? style tab group label colors when open and closed in light and dark mode */
+	color: light-dark(var(--tab-group-color-pale), var(--tab-group-color-pale)) !important;
+	background-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+
+	tab-group[collapsed] > .tab-group-label-container > & {
+		background-color: light-dark(var(--tab-group-color-pale), var(--tab-group-color)) !important;
+		color: light-dark(var(--tab-group-color), var(--tab-group-color-pale)) !important;
+		outline: 1px solid light-dark(color-mix(in srgb, var(--tab-group-color) 25%, #fff), color-mix(in srgb, var(--tab-group-color) 90%, #fff)) !important;
+		outline-offset: -1px !important;
+	}
+}
+
+/*? make tab group line color match label color */
+tab-group {
+	--tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+
+	&[collapsed] {
+		--tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color)) !important;
+	}
+}
+
+/*? collapse selected tab to icon only when you close the tab group it's in */
+#tabbrowser-tabs[orient="horizontal"] tab-group[collapsed] .tabbrowser-tab[fadein][visuallyselected] {
+	max-width: 0 !important;
+	min-width: 38px !important;
+
+	.tab-content {
+		display: flex;
+		justify-content: center;
+
+		.tab-icon-image {
+			margin-inline-end: 0 !important;
+		}
+
+		.tab-label-container {
+			display: none;
+		}
+
+		.tab-close-button {
+			display: none;
+		}
+	}
+}
+
+/* +nuclearcodecat */
+.tab-group-label {
+	margin-bottom: -1px !important;
+	border-bottom-left-radius: unset !important;
+	border-bottom-right-radius: unset !important;
+}
+
+/* pr #69 end */
 
 /*? make tab background round and small */
 .tab-background {
@@ -780,7 +862,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*? change tab background color */
 .tab-background {
 	background: color-mix(in srgb, var(--tab-selected-bgcolor) 20%, rgba(0, 0, 0, 0));
-} 
+}
 
 /*? hide firefox view separator */
 #tabbrowser-tabs {
@@ -1009,7 +1091,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
 			margin-right: 0 !important;
 		}
-	}	
+	}
 
 	@media not -moz-pref("shimmer.sidebar-right-side") {
 		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
@@ -1142,7 +1224,7 @@ treecol {
 		background: rgba(0, 0, 0, 0) !important;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
-	
+
 		& > image {
 			width: 14px !important;
 			height: 14px !important;
@@ -1153,7 +1235,7 @@ treecol {
 			padding: 0px !important;
 			background: var(--toolbarbutton-hover-background) !important;
 		}
-	
+
 		&:hover > image {
 			transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 		}
