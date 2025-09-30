@@ -147,7 +147,7 @@
 	display: grid !important;
 	grid-template-rows: repeat(4, auto);
 }
-#PersonalToolbar:not([collapsed="true"]) {
+#PersonalToolbar:not([collapsed]) {
 	padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
 }
 @media -moz-pref("shimmer.native-vertical-tabs") {
