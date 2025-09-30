@@ -1,4 +1,4 @@
-# shimmer - charming firefox userchrome with sidebery support (v2.33)
+# shimmer - charming firefox userchrome with sidebery support (v2.34)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes

@@ -1,3 +1,7 @@
+# v2.34
+ - fixed missing rounding on urlbar in late firefox versions (#64; pr's #65, #68)
+ - updated tab group styles (pr #69)
+
 # v2.33
  - fixed an issue with styling lost on window control buttons, caused by firefox update 141
 
@@ -16,7 +20,7 @@
   some things have been fixed, some haven't, for some i just don't know the solution. if anyone would like to contribute, please do so.
 
 # v2.28
- - fixed urlbar backdrop positon (#47; pr, #48)
+ - fixed urlbar backdrop positon (#47; pr #48)
 
 # v2.27
  - new collapsing sidebar feature!!!!!!
