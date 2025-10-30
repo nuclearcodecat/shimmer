@@ -51,6 +51,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - keep the toggles at default and click "import"
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
+ - toggle `svg.context-properties.content.enabled` true
  - open about:profiles, find your profile and open the root folder
  - create a `chrome` folder if nonexistent
  - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
