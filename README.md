@@ -52,6 +52,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
+ - toggle `sidebar.revamp` false
  - open about:profiles, find your profile and open the root folder
  - create a `chrome` folder if nonexistent
  - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
@@ -84,7 +85,6 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - `shimmer.shorter-navbar` - toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
  - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
- - `shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
