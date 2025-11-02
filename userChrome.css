@@ -106,6 +106,7 @@
 	scrollbar-width: thin !important;
 }
 
+/* REMOVE IN V2.35!! */
 @media -moz-pref("shimmer.hide-sidebar-button") {
 	#sidebar-button {
 		display: none !important;
