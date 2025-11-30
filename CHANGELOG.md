@@ -1,3 +1,8 @@
+# v2.35
+ - fixed newtab page on private windows, broken due to a firefox update
+ - general revamp of the newtab pages
+ - removed redundant `shimmer.hide-sidebar-button` option, which is implemented in firefox settings
+
 # v2.34
  - fixed missing rounding on urlbar in late firefox versions (#64; pr's #65, #68)
  - updated tab group styles (pr #69)

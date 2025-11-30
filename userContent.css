@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'Super Glue';
 	src: url('./assets/fonts/SuperGlue.woff2') format('woff2'),
-	 url('./assets/fonts/SuperGlue.woff') format('woff');
+		  url('./assets/fonts/SuperGlue.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -15,17 +15,18 @@
 	scrollbar-width: thin !important;
 }
 
+/* whole middle card */
 .activity-stream .outer-wrapper > main,
 .showPrivate {
 	/* background: var(--newtab-background-color-secondary) !important; */
 	background: rgba(150, 150, 150, 0.35) !important;
-	border-radius: 48px;
-	height: auto !important;
+	border-radius: 3rem;
 	margin-top: auto !important;
 	margin-bottom: auto !important;
-	min-width: 250px !important;
 }
+
 .activity-stream .outer-wrapper > main {
+	/* make space for new logo/font */
 	padding: 2rem 0 0 0 !important;
 	mix-blend-mode: luminosity !important;
 }
@@ -61,7 +62,7 @@
 	color: #fff !important;
 	filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.15));
 	/* mix-blend-mode: color-burn !important; */
-	font-size: 4.25rem;
+	font-size: 4rem;
 	letter-spacing: 0.25rem;
 }
 .activity-stream .wordmark::before,
@@ -69,54 +70,10 @@
 	content: '';
 	background: url(./assets/icons/ff.svg);
 	background-size: 100% 100%;
-	width: 100px;
-	height: 100px;
+	width: 6rem;
+	height: 6rem;
 	display: block;
-}
-@media only screen and (max-width: 609px) {
-	.activity-stream .outer-wrapper > main,
-	.showPrivate {
-	 width: 95% !important;
-	 margin-right: auto !important;
-	 margin-left: auto !important;
-	}
-
-	.activity-stream .wordmark::before,
-	.showPrivate .wordmark::before {
-	 width: 70px;
-	 height: 70px;
-	}
-
-	.activity-stream .fake-textbox,
-	.showPrivate .fake-textbox {
-	 text-wrap: nowrap;
-	 overflow: hidden;
-	}
-
-	.activity-stream .outer-wrapper .search-inner-wrapper {
-	 width: calc(100% - 2rem) !important;
-	 margin-left: 1rem !important;
-	 margin-right: 1rem !important;
-	 & > .search-handoff-button {
-		width: 100% !important;
-	 }
-	}
-}
-@media only screen and (max-width: 500px) {
-	.activity-stream .wordmark::before,
-	.showPrivate .wordmark::before {
-	 display: none !important;
-	}
-	.activity-stream .wordmark::after,
-	.showPrivate .wordmark::after {
-	 font-size: 3.5rem !important;
-	}
-
-	.activity-stream .outer-wrapper .search-inner-wrapper {
-	 width: calc(100% - 0.6rem) !important;
-	 margin-left: 0.3rem !important;
-	 margin-right: 0.3rem !important;
-	}
+	filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
 }
 
 .activity-stream .search-handoff-button,
@@ -133,6 +90,9 @@
 }
 .activity-stream .search-inner-wrapper {
 	mix-blend-mode: color-burn !important;
+	/* make fake searchbar take whole card width */
+	width: 100% !important;
+	padding: 0 3rem !important;
 }
 
 .activity-stream .outer-wrapper,
@@ -142,7 +102,7 @@
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.34, check for updates at';
+	content: 'shimmer version 2.35, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;
@@ -193,4 +153,27 @@ section[data-section-id='topsites'] {
 
 .showPrivate .wordmark::before {
 	mix-blend-mode: luminosity !important;
+}
+
+#root .has-mobile-download-promo .mobileDownloadPromoWrapper {
+	display: none !important;
+}
+
+.newtab-main {
+	/* i have no idea why this works but it does :3c */
+	min-width: 0 !important;
+	max-width: 45rem !important;
+}
+.non-collapsible-section {
+	max-width: 45rem !important;
+}
+
+@media screen and (max-width: 550px) {
+	.activity-stream .wordmark::before {
+		width: 4rem !important;
+	}
+
+	.activity-stream .wordmark::after {
+		font-size: 3.5rem !important;
+	}
 }
