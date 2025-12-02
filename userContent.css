@@ -19,7 +19,7 @@
 .activity-stream .outer-wrapper > main,
 .showPrivate {
 	/* background: var(--newtab-background-color-secondary) !important; */
-	background: rgba(150, 150, 150, 0.35) !important;
+	background: rgba(105,105,105, 0.45) !important;
 	border-radius: 3rem;
 	margin-top: auto !important;
 	margin-bottom: auto !important;
@@ -80,16 +80,13 @@
 .showPrivate .search-handoff-button {
 	border-radius: var(--shimmer-urlbar-rounding) !important;
 }
-.activity-stream .search-handoff-button {
-	mix-blend-mode: color-burn !important;
-}
 
 .activity-stream .search-inner-wrapper,
 .showPrivate .logo-and-wordmark {
 	background: transparent !important;
 }
 .activity-stream .search-inner-wrapper {
-	mix-blend-mode: color-burn !important;
+	mix-blend-mode: color-dodge !important;
 	/* make fake searchbar take whole card width */
 	width: 100% !important;
 	padding: 0 3rem !important;
@@ -176,4 +173,9 @@ section[data-section-id='topsites'] {
 	.activity-stream .wordmark::after {
 		font-size: 3.5rem !important;
 	}
+}
+
+#root .personalizeButtonWrapper .personalize-button {
+	background: rgba(105,105,105, 0.45) !important;
+	mix-blend-mode: luminosity !important;
 }
