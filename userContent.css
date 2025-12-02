@@ -177,5 +177,6 @@ section[data-section-id='topsites'] {
 
 #root .personalizeButtonWrapper .personalize-button {
 	background: rgba(105,105,105, 0.45) !important;
+	border-radius: 0.75rem !important;
 	mix-blend-mode: luminosity !important;
 }
