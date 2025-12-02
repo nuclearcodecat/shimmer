@@ -6,18 +6,25 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ### hi, i consider this project mostly complete. i don't plan any new features since i just don't feel like working on this and i have some BIG projects i'm focused on right now. shimmer looks great and i'm leaving it at that. feel free to request anything still, i don't promise i'll add it though. thanks for all of the nice words and stars :333
 
 ## demonstration
-
-### collapsing sidebar
+<!--
 ![sidebarcollapse](https://github.com/user-attachments/assets/be8cb062-19f6-40b5-b26d-6a4fe8ceff7b)
+-->
+![out](https://github.com/user-attachments/assets/41ca27e6-701b-4049-8e38-76bcb300cd85)
 
-| sidebery, light theme, sidebar on left side, bookmarks open, no collapsing sidebar                | native tabs, "green in the night" theme                                                                      |
+
+| using sidebery                                                                                    | native tabs                                                                                                  |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| ![lightsidebery](https://github.com/user-attachments/assets/dd26f273-438e-42be-b77a-5d0df96b70bf) | ![greennative](https://github.com/user-attachments/assets/a60e6432-c919-4766-8353-609f1296315d)              |
+| ![y](https://github.com/user-attachments/assets/6c8ce4d2-a9a8-478c-b427-77417f6a27a5) | ![x](https://github.com/user-attachments/assets/7b523c33-bec6-482a-9f01-3e478e75902e) |
+<!-- | ![lightsidebery](https://github.com/user-attachments/assets/dd26f273-438e-42be-b77a-5d0df96b70bf) | ![greennative](https://github.com/user-attachments/assets/a60e6432-c919-4766-8353-609f1296315d)              | -->
+
 
 
 | menus                                                                                       | popover urlbar                                                                             |
 |---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | ![ctxmenu](https://github.com/user-attachments/assets/7da9bdff-d247-4680-ad20-70d12c886272) | ![urlbar](https://github.com/user-attachments/assets/8b328ecf-0297-4e8c-8cb6-8826040c7916) |
+
+### collapsing sidebar
+as seen in the demonstration
 
 ### compact findbar
 ![findbar](https://github.com/user-attachments/assets/198c5ec8-6e59-46fb-8624-0baa90506c86)
