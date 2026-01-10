@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.35 */
+/*! SHIMMMER v2.36 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -29,7 +29,7 @@
 	--shimmer-top-bottom-browser-margin: 8px;
 
 	/* could be hardcoded in some places... */
-	--shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear;
+	--shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear, color 0.075s linear;
 
 	/*? gap between window control buttons */
 	--shimmer-winctr-gap: 5px;
@@ -656,7 +656,7 @@ findbar:not([hidden]) {
 	padding: 0 5px !important;
 }
 
-.urlbarView-row:hover {
+.urlbarView-row:not([descendant-selected]):hover {
 	background: var(--urlbar-box-hover-bgcolor) !important;
 }
 
@@ -1113,27 +1113,31 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 menuitem, menu, .menu-iconic, #searchmode-switcher-popup tooblarbutton {
 	border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 	/* margin-inline: var(--arrowpanel-menuitem-margin-inline) !important; */
-	padding: var(--arrowpanel-menuitem-padding) !important;
 }
 /*? better hover color */
 /* menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
 	background: var(--panel-item-hover-bgcolor) !important;
 } */
-menu, menuitem {
-	&:where([_moz-menuactive]) {
-		&:not([disabled="true"]) {
-			background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 85%, var(--lwt-text-color, var(--panel-color))) !important;
-		}
-		background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 92.5%, var(--lwt-text-color, var(--panel-color))) !important;
-	}
-}
+/* menu, menuitem { */
+/* 	&:where([_moz-menuactive]) { */
+/* 		&:not([disabled="true"]) { */
+/* 			background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 85%, var(--lwt-text-color, var(--panel-color))) !important; */
+/* 		} */
+/* 		background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 92.5%, var(--lwt-text-color, var(--panel-color))) !important; */
+/* 	} */
+/* } */
 
 /*? fading backgrounds on buttons */
-menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > image, .urlbarView-row, menu,
-menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:hover, toolbarbutton:hover > image, .urlbarView-row:hover, menu:hover,
-.findbar-closebutton, .findbar-closebutton:hover
+menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:hover,
+toolbarbutton:hover > image, .urlbarView-row:hover, menu:hover, .findbar-closebutton:hover
 {
 	transition: var(--shimmer-btn-anim) !important;
+}
+menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton,
+toolbarbutton > image, .urlbarView-row, menu, .findbar-closebutton
+{
+	transition: var(--shimmer-btn-anim) !important;
+	/* transition-delay: 0.05s !important; */
 }
 
 /*?  */

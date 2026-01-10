@@ -1,4 +1,4 @@
-# shimmer - charming firefox userchrome with sidebery support (v2.35)
+# shimmer - charming firefox userchrome with sidebery support (v2.36)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes
@@ -50,7 +50,7 @@ as seen in the demonstration
  - floating statuspanel
 
 ## installation
- - download code from github (green "code" button) and unzip it
+ - clone or download code from github (green "code" button) and unzip it
  - download sidebery from mozilla addons if wanted
  - open sidebery settings, scroll to the bottom (help section)
  - click on "import addon data"
@@ -77,21 +77,22 @@ as seen in the demonstration
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify
- - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (unfortunately this also requires commenting out some sidebery styles, they are marked in the styles editor inside of sidebery settings)
- - `shimmer.remove-winctr-buttons` - toggle true to remove window control buttons
- - `shimmer.remove-firefox-view-button` - toggle true to remove the firefox view button
- - `shimmer.disable-popover-transition` - toggle true to remove the popover transition of the urlbar
- - `shimmer.disable-urlbar-background-transition` - toggle true to remove the subtle transition of the urlbar background which happens during popover animation
- - `shimmer.disable-popover-urlbar` - toggle true to remove the popover effect on the urlbar
- - `shimmer.native-vertical-tabs` - toggle true if using firefox vertical tabs instead of sidebery. don't toggle true if using *horizontal* tabs, they will disappear
- - `shimmer.show-sidebar-header` - toggle true to show sidebar header
+ - `shimmer.disable-collapsing-sidebar` – toggle true to disable the collapsing sidebar (unfortunately this also requires commenting out some sidebery styles, they are marked in the styles editor inside of sidebery settings)
+ - `shimmer.remove-winctr-buttons` – toggle true to remove window control buttons
+ - `shimmer.remove-firefox-view-button` – toggle true to remove the firefox view button
+ - `shimmer.disable-popover-transition` – toggle true to remove the popover transition of the urlbar
+ - `shimmer.disable-urlbar-background-transition` – toggle true to remove the subtle transition of the urlbar background which happens during popover animation
+ - `shimmer.disable-popover-urlbar` – toggle true to remove the popover effect on the urlbar
+ - `shimmer.native-vertical-tabs` – toggle true if using firefox vertical tabs instead of sidebery. don't toggle true if using *horizontal* tabs, they will disappear
+ - `shimmer.show-sidebar-header` – toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
- - `shimmer.sidebar-right-side` - toggle true if you use sidebery on the right side. you have to move the sidebar first in firefox using the sidebar header, which has to be reenabled in config
- - `shimmer.reverse-winctr-buttons-side` - toggle true to move window control buttons to the left side
- - `shimmer.taller-tabs` - toggle true to make the tabs as tall as default firefox tabs
- - `shimmer.shorter-navbar` - toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
- - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
- - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
+ - `shimmer.sidebar-right-side` – toggle true if you use sidebery on the right side. you have to move the sidebar first in firefox using the sidebar header, which has to be reenabled in config
+ - `shimmer.reverse-winctr-buttons-side` – toggle true to move window control buttons to the left side
+ - `shimmer.taller-tabs` – toggle true to make the tabs as tall as default firefox tabs
+ - `shimmer.shorter-navbar` – toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
+ - `shimmer.disable-compact-winctr-buttons` – toggle true to revert the compact window control buttons to default
+ - `shimmer.dont-expand-selected-tab` – toggle true to disable the effect of expanding the active tab when there are many tabs open
+ - `shimmer.enable-theme-aware-wallpapers` – toggle true to command firefox to display user-selected wallpapers. to change the wallpapers, open the chrome directory, replace the *light* and *dark* files in the *walls* directory with your desired pictures, and execute `makewalls.sh`. please note that this is a bash script.
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.

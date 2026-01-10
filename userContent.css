@@ -1,3 +1,5 @@
+@import "walls.css";
+
 @font-face {
 	font-family: 'Super Glue';
 	src: url('./assets/fonts/SuperGlue.woff2') format('woff2'),
@@ -13,6 +15,21 @@
 
 *:not(.tabs-menu) {
 	scrollbar-width: thin !important;
+}
+
+/* theme aware wall */
+@media (-moz-pref("shimmer.enable-theme-aware-wallpapers")) {
+	@media (prefers-color-scheme: dark) {
+		body.activity-stream {
+			--newtab-wallpaper: var(--shimmer-dark-wall) !important;
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		body.activity-stream {
+			--newtab-wallpaper: var(--shimmer-light-wall) !important;
+		}
+	}
 }
 
 /* whole middle card */
@@ -99,7 +116,7 @@
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.35, check for updates at';
+	content: 'shimmer version 2.36, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;

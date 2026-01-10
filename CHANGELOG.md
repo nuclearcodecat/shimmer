@@ -1,3 +1,8 @@
+# v2.36
+ - new config property `shimmer.enable-theme-aware-wallpapers` - please read customization notes in README
+ - fixed incorrect background color on the currently selected urlbar row when hovered
+ - removed background color modification from context menus when hovered
+
 # v2.35
  - fixed newtab page on private windows, broken due to a firefox update
  - general revamp of the newtab pages
