@@ -92,7 +92,7 @@ as seen in the demonstration
  - `shimmer.shorter-navbar` – toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
  - `shimmer.disable-compact-winctr-buttons` – toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` – toggle true to disable the effect of expanding the active tab when there are many tabs open
- - `shimmer.enable-theme-aware-wallpapers` – toggle true to command firefox to display user-selected wallpapers. to change the wallpapers, open the chrome directory, replace the *light* and *dark* files in the *walls* directory with your desired pictures, and execute `makewalls.sh`. please note that this is a bash script.
+ - `shimmer.enable-theme-aware-wallpapers` – toggle true to command firefox to display user-selected wallpapers. to change the wallpapers, open the chrome directory, replace the *light* and *dark* files in the *walls* directory with your desired pictures, and execute `makewalls.sh`. please note that this is a bash script. if a wallpaper doesn't work, try making it smaller, unfortunately large files break – a safe limit is < 1MiB.
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
