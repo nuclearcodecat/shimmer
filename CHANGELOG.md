@@ -1,3 +1,10 @@
+# v2.37
+ - added rounding on trust icon in urlbar
+ - updated some statuspanel styles
+ - fixed ugly "new" fake search bar in private newtab
+ - fixed rounding on newtab search bar
+ - fixed ugly margin on newtab card
+
 # v2.36
  - new config property `shimmer.enable-theme-aware-wallpapers` - please read customization notes in README
  - fixed incorrect background color on the currently selected urlbar row when hovered

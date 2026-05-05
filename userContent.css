@@ -93,9 +93,10 @@
 	filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
 }
 
-.activity-stream .search-handoff-button,
-.showPrivate .search-handoff-button {
-	border-radius: var(--shimmer-urlbar-rounding) !important;
+content-search-handoff-ui {
+	overflow: hidden !important;
+	border-radius: 1.15rem !important;
+	--content-search-handoff-ui-border-width: 0 !important;
 }
 
 .activity-stream .search-inner-wrapper,
@@ -116,7 +117,7 @@
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.36, check for updates at';
+	content: 'shimmer version 2.37, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;
@@ -160,11 +161,6 @@ section[data-section-id='topsites'] {
 	margin-top: 3.25rem !important;
 }
 
-.showPrivate .search-handoff-button {
-	border: none !important;
-	border-left: solid 0.8rem rgb(50, 28, 100) !important;
-}
-
 .showPrivate .wordmark::before {
 	mix-blend-mode: luminosity !important;
 }
@@ -196,4 +192,8 @@ section[data-section-id='topsites'] {
 	background: rgba(105,105,105, 0.45) !important;
 	border-radius: 0.75rem !important;
 	mix-blend-mode: luminosity !important;
+}
+
+.activity-stream .search-wrapper {
+	margin: 0 !important;
 }

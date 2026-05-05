@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.36 */
+/*! SHIMMMER v2.37 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -718,13 +718,13 @@ findbar:not([hidden]) {
 /*? round statuspanel */
 #statuspanel-label {
 	border-radius: 7px !important;
-	box-shadow: 0 0 0px 1px var(--lwt-accent-color);
+	/* box-shadow: 0 0 0px 1px var(--lwt-accent-color); */
 }
 
 /*? border and alternative statuspanel padding */
 #statuspanel-label {
 	padding: 3px 8px !important;
-	border: solid 1px var(--button-background-color-active) !important;
+	border: solid 1px ThreeDShadow !important;
 }
 
 /*? color the statuspanel */
@@ -987,9 +987,9 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? hide ugly border around tabbox */
-#tabbrowser-tabbox * {
-	border: 0 !important;
-}
+/* #tabbrowser-tabbox * { */
+	/* border: 0 !important; */
+/* } */
 
 /*? rounded browser on left edge */
 @media not -moz-pref("shimmer.native-vertical-tabs") {
