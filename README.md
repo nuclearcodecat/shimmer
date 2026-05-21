@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=nuclearcodecat&project=shimmer&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # shimmer - charming firefox userchrome with sidebery support (v2.37)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
