@@ -1,6 +1,8 @@
 # shimmer - charming firefox userchrome with sidebery support (v2.38)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
+# firefox 151 broke lots of stuf, i'll try to roll out an update soon
+
 see the [changelog](CHANGELOG.md) for a history of changes
 
 ### hi, i consider this project mostly complete. i don't plan any new features since i just don't feel like working on this and i have some BIG projects i'm focused on right now. shimmer looks great and i'm leaving it at that. feel free to request anything still, i don't promise i'll add it though. thanks for all of the nice words and stars :333
