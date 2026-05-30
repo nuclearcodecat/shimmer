@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.37 */
+/*! SHIMMMER v2.38 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -343,7 +343,7 @@
 }
 
 /*? rounded buttons inside urlbar (firefox logo on about pages, padlock, trans, etc.) */
-#identity-box > box, #tracking-protection-icon-container, #page-action-buttons > *, #urlbar-revert-button-container, #urlbar-searchmode-switcher {
+#identity-box > box, #tracking-protection-icon-container, #page-action-buttons > *, #urlbar-revert-button-container, #urlbar-searchmode-switcher, #trust-icon-container {
 	border-radius: var(--shimmer-urlbar-rounding) !important;
 }
 

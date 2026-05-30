@@ -1,3 +1,6 @@
+# v2.38
+ - fixed trust icon rounding in urlbar again
+
 # v2.37
  - added rounding on trust icon in urlbar
  - updated some statuspanel styles

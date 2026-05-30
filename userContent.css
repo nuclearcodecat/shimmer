@@ -117,7 +117,7 @@ content-search-handoff-ui {
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.37, check for updates at';
+	content: 'shimmer version 2.38, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;
