@@ -32,22 +32,6 @@
 	}
 }
 
-/* whole middle card */
-.activity-stream .outer-wrapper > main,
-.showPrivate {
-	/* background: var(--newtab-background-color-secondary) !important; */
-	background: rgba(105,105,105, 0.45) !important;
-	border-radius: 3rem;
-	margin-top: auto !important;
-	margin-bottom: auto !important;
-}
-
-.activity-stream .outer-wrapper > main {
-	/* make space for new logo/font */
-	padding: 2rem 0 0 0 !important;
-	mix-blend-mode: luminosity !important;
-}
-
 .showPrivate {
 	padding: 2rem !important;
 }
@@ -95,7 +79,7 @@
 
 content-search-handoff-ui {
 	overflow: hidden !important;
-	border-radius: 1.15rem !important;
+	border-radius: 9999rem !important;
 	--content-search-handoff-ui-border-width: 0 !important;
 }
 
@@ -107,7 +91,7 @@ content-search-handoff-ui {
 	mix-blend-mode: color-dodge !important;
 	/* make fake searchbar take whole card width */
 	width: 100% !important;
-	padding: 0 3rem !important;
+	/* padding: 0 3rem !important; */
 }
 
 .activity-stream .outer-wrapper,
@@ -116,12 +100,17 @@ content-search-handoff-ui {
 	padding: 48px !important;
 }
 
+.activity-stream .customize-menu .close-button-wrapper {
+	margin-bottom: 1rem;
+}
+
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.38, check for updates at';
+	content: 'shimmer version 2.39, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;
 	font-size: 0.8rem;
+	margin-left: 2em;
 }
 
 .activity-stream .customize-menu .close-button-wrapper::after {
@@ -131,6 +120,7 @@ content-search-handoff-ui {
 	position: absolute;
 	bottom: 0;
 	font-size: 0.875rem;
+	margin-left: 2em;
 }
 
 section[data-section-id='topsites'] {
@@ -189,11 +179,45 @@ section[data-section-id='topsites'] {
 }
 
 #root .personalizeButtonWrapper .personalize-button {
-	background: rgba(105,105,105, 0.45) !important;
+	background: rgba(105, 105, 105, 0.45) !important;
 	border-radius: 0.75rem !important;
 	mix-blend-mode: luminosity !important;
 }
 
 .activity-stream .search-wrapper {
 	margin: 0 !important;
+}
+
+
+#root .nova-outer-wrapper {
+	max-width: 60rem !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	margin: auto !important;
+}
+
+/* whole middle card */
+#root .nova-outer-wrapper .container {
+	width: 100% !important;
+	display: unset !important;
+	background: rgba(105, 105, 105, 0.45) !important;
+	padding: 4rem 1rem !important;
+	border-radius: 3rem !important;
+	mix-blend-mode: luminosity !important;
+	margin: 0 3rem !important;
+}
+
+#root .nova-outer-wrapper .search-inner-wrapper {
+	padding: 0 3rem !important;
+}
+
+@media screen and (max-width: 550px) {
+	#root .nova-outer-wrapper {
+		width: 95% !important;
+	}
+
+	#root .nova-outer-wrapper .search-inner-wrapper {
+		padding: 0 !important;
+	}
 }

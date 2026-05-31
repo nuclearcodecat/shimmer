@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.38 */
+/*! SHIMMMER v2.39 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -1100,6 +1100,17 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*! === menus === */
+
+/* compact top-right main menu */
+#appMenu-multiView {
+	--panel-menuitem-padding: 0.25rem 0.35rem !important;
+	--panel-menuitem-margin: 0rem 0.2rem !important;
+	& .panel-subview-body {
+		margin-bottom: 0.2rem !important;
+		padding-top: 0.2rem !important;
+	}
+}
+
 /*? consistent color for ctx menus */
 .menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
 	background: var(--lwt-accent-color, var(--panel-background)) !important;

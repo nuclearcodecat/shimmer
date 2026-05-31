@@ -1,3 +1,7 @@
+# v2.39
+ - fixed newtab page card for firefox 151
+ - fixed compact firefox top-right menu for firefox 151
+
 # v2.38
  - fixed trust icon rounding in urlbar again
 
