@@ -59,6 +59,7 @@ as seen in the demonstration
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
+ - toggle `browser.urlbar.scotchBonnet.enableOverride` false
  - toggle `sidebar.revamp` false
  - open about:profiles, find your profile and open the root folder
  - create a `chrome` folder if nonexistent
