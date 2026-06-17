@@ -407,7 +407,7 @@
 	overflow: hidden !important;
 	top: -30vh !important;
 	left: -30vw !important;
-	background: color-mix(in srgb, var(--toolbar-background-color) 35%, rgba(0, 0, 0, 0)) !important;
+	background: color-mix(in srgb, var(--toolbar-background-color) 45%, rgba(0, 0, 0, 0)) !important;
 }
 
 /*? urlbar bigger text */
