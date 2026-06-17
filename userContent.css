@@ -105,12 +105,12 @@ content-search-handoff-ui {
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-	content: 'shimmer version 2.39, check for updates at';
+	content: 'shimmer version 2.40, check for updates at';
 	display: block;
 	position: absolute;
 	top: 35%;
 	font-size: 0.8rem;
-	margin-left: 2em;
+	margin-left: 1rem;
 }
 
 .activity-stream .customize-menu .close-button-wrapper::after {
@@ -120,7 +120,7 @@ content-search-handoff-ui {
 	position: absolute;
 	bottom: 0;
 	font-size: 0.875rem;
-	margin-left: 2em;
+	margin-left: 1rem;
 }
 
 section[data-section-id='topsites'] {

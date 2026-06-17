@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.39 */
+/*! SHIMMMER v2.40 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -730,7 +730,7 @@ findbar:not([hidden]) {
 /*? color the statuspanel */
 #statuspanel-label {
 	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
-	color: var(--lwt-text-color) !important;
+	/* color: var(--lwt-text-color) !important; */
 }
 
 #statuspanel, #statuspanel[type="overLink"] {
