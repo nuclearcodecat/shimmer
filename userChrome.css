@@ -336,7 +336,7 @@
 	border: 0 !important;
 }
 :root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background {
-	background: var(--toolbar-field-background-color) !important;
+	/* background: var(--toolbar-field-background-color) !important; */
 	border: 1px solid var(--toolbar-field-border-color) !important;
 }
 .urlbar-background {
@@ -394,7 +394,7 @@
 }
 
 #urlbar[breakout-extend] .urlbar-background {
-	background: var(--toolbar-field-focus-background-color) !important;
+	/* background: var(--toolbar-field-focus-background-color) !important; */
 }
 
 /*? urlbox backdrop */
@@ -407,7 +407,7 @@
 	overflow: hidden !important;
 	top: -30vh !important;
 	left: -30vw !important;
-	background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
+	background: color-mix(in srgb, var(--toolbar-background-color) 35%, rgba(0, 0, 0, 0)) !important;
 }
 
 /*? urlbar bigger text */

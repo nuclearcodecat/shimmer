@@ -1,5 +1,6 @@
 # v2.40
  - fixed broken statuspanel text color in private windows
+ - fixed firefox v152's change which broke the background color of the broken out urlbar and some other browser backgrounds
 
 # v2.39
  - fixed newtab page card for firefox 151
