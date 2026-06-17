@@ -653,15 +653,6 @@ findbar:not([hidden]) {
 .urlbarView-row {
 	border-radius: var(--shimmer-urlbar-inner-rounding) !important;
 }
-/*? for some reason the results get clipped so adding some padding */
-.urlbarView {
-	padding: 0 5px !important;
-}
-
-.urlbarView-row:not([descendant-selected]):hover {
-	background: var(--urlbar-box-hover-bgcolor) !important;
-}
-
 /*? small separator between results and search bar */
 /* .urlbarView-body-outer {
 	border-top: 1px rgba(0, 0, 0, 0.15) solid !important;
