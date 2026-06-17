@@ -262,13 +262,15 @@
 }
 
 /*? make navigation buttons white_ when sidebar open */
-@media -moz-pref("shimmer.native-vertical-tabs") {
-	#navigator-toolbox, #nav-bar {
-		background: var(--toolbar-bgcolor) !important;
+/* @media -moz-pref("shimmer.native-vertical-tabs") { */
+	/* #navigator-toolbox, #nav-bar { */
+		/* background: var(--toolbar-background-color) !important; */
+	/* } */
+/* } */
+#main-window[titlepreface="​"]  {
+	& body {
+		background: var(--toolbar-background-color) !important;
 	}
-}
-#main-window[titlepreface="​"] #navigator-toolbox {
-	background: var(--toolbar-bgcolor) !important;
 }
 
 /*? hide spacers when sidebery open */
@@ -455,7 +457,7 @@
 
 /*? make rounded borders have nice color */
 #browser {
-	background: var(--toolbar-bgcolor) !important;
+	background: var(--toolbar-background-color) !important;
 }
 
 /*? if popup window, make urlbar smaller and centered */
@@ -505,7 +507,7 @@ findbar[hidden]{
 
 findbar:not([hidden]) {
 	opacity: 1 !important;
-	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+	background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important;
 	-moz-appearance: none !important;
 	appearance: none !important;
 }
@@ -582,7 +584,7 @@ findbar:not([hidden]) {
 	position: absolute !important;
 	padding: 1.8rem 0.7rem 0.2rem 0.6rem !important;
 	top: 14px !important;
-	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+	background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important;
 	/* border: solid var(--arrowpanel-border-color) 1px !important; */
 	left: -12px !important;
 	border-bottom-left-radius: 12px !important;
@@ -603,7 +605,7 @@ findbar:not([hidden]) {
 	content: '';
 	width: 1rem;
 	height: 1.5rem;
-	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+	background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important;
 	right: -0.5rem;
 	top: 0.8rem;
 	transform: rotate(45deg);
@@ -686,7 +688,7 @@ findbar:not([hidden]) {
 
 /*? seamless transition */
 /* #sidebar-box {
-	box-shadow: -10px -100px 0px 100px var(--toolbar-bgcolor),
+	box-shadow: -10px -100px 0px 100px var(--toolbar-background-color),
 	0 0px 20px 15px var(--lwt-accent-color);
 } */
 /*? hide the hiding box shadow */
@@ -729,8 +731,8 @@ findbar:not([hidden]) {
 
 /*? color the statuspanel */
 #statuspanel-label {
-	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
-	color: var(--lwt-text-color) !important;
+	background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important;
+	/* color: var(--lwt-text-color) !important; */
 }
 
 #statuspanel, #statuspanel[type="overLink"] {
@@ -1104,10 +1106,10 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /* compact top-right main menu */
 #appMenu-multiView {
 	--panel-menuitem-padding: 0.25rem 0.35rem !important;
-	--panel-menuitem-margin: 0rem 0.2rem !important;
+	--panel-menuitem-margin: 0rem 0.35rem !important;
 	& .panel-subview-body {
-		margin-bottom: 0.2rem !important;
-		padding-top: 0.2rem !important;
+		margin-bottom: 0.35rem !important;
+		padding-top: 0.35rem !important;
 	}
 }
 

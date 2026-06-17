@@ -11,6 +11,7 @@
 
 :root {
 	--shimmer-urlbar-rounding: 100px;
+	--shimmer-browser-border-radius: 20px;
 }
 
 *:not(.tabs-menu) {
@@ -110,7 +111,7 @@ content-search-handoff-ui {
 	position: absolute;
 	top: 35%;
 	font-size: 0.8rem;
-	margin-left: 2em;
+	margin-left: 1.25rem;
 }
 
 .activity-stream .customize-menu .close-button-wrapper::after {
@@ -120,7 +121,7 @@ content-search-handoff-ui {
 	position: absolute;
 	bottom: 0;
 	font-size: 0.875rem;
-	margin-left: 2em;
+	margin-left: 1.25rem;
 }
 
 section[data-section-id='topsites'] {
@@ -220,4 +221,9 @@ section[data-section-id='topsites'] {
 	#root .nova-outer-wrapper .search-inner-wrapper {
 		padding: 0 !important;
 	}
+}
+
+dialog.customize-menu {
+	/* 2px is the "margin" of the dialog box from the walls */
+	border-radius: calc(var(--shimmer-browser-border-radius) - 2px) !important;
 }
