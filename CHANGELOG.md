@@ -1,3 +1,6 @@
+# v2.40
+ - fixed broken statuspanel text color in private windows
+
 # v2.39
  - fixed newtab page card for firefox 151
  - fixed compact firefox top-right menu for firefox 151
