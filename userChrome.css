@@ -1106,7 +1106,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? consistent color for ctx menus */
 .menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
-	background: var(--lwt-accent-color, var(--panel-background)) !important;
+	/* background: var(--lwt-accent-color, var(--panel-background)) !important; */
 	border-radius: var(--arrowpanel-border-radius) !important;
 	border: 0 !important;
 	outline: solid 1px var(--lwt-tab-line-color) !important;
