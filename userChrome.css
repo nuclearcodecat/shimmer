@@ -330,6 +330,13 @@
 
 /*! === navbar === */
 
+/* nova fix: this was set to 50px before, no clue why, but it worked. */
+/* without it, the whole bar goes crazy when the popover closes. */
+/* it can even be 0px for this to work */
+#navigator-toolbox {
+	height: 50px !important;
+}
+
 /*? rounded urlbar and box */
 :root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background {
 	background: rgba(0, 0, 0, 0) !important;
@@ -356,7 +363,7 @@
 
 /*? make the background of extended urlbar move down and BROKEN drop a blur behind */
 @media not -moz-pref("shimmer.disable-popover-urlbar") {
-	#urlbar[breakout-extend] {
+	#urlbar[popover-open] {
 		position: fixed !important;
 		margin-top: 12vh !important;
 		/* backdrop-filter: blur(8px) !important; */
@@ -366,8 +373,8 @@
 }
 
 @media not -moz-pref("shimmer.disable-popover-transition") {
-	#urlbar[breakout-extend] {
-		transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	#urlbar[popover-open] {
+		transition: mar, #sidebar-panel-headergin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
 
 	#urlbar {
@@ -375,31 +382,31 @@
 	}
 }
 
-#urlbar[breakout-extend] {
-	z-index: 9999 !important;
+#urlbar[popover-open] {
+	z-index: 9999 !, #sidebar-panel-headerimportant;
 	left: 10% !important;
 	width: calc(100vw - 20%) !important;
 }
 
 @media not -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] .urlbar-background {
-		transition: all 0.1s linear !important;
+	#urlbar[popover-open] .urlbar-background {
+		transition: all, #sidebar-panel-header 0.1s linear !important;
 	}
 }
 
 @media -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] .urlbar-background {
-		transition: none !important;
+	#urlbar[popover-open] .urlbar-background {
+		transition: non, #sidebar-panel-headere !important;
 	}
 }
 
-#urlbar[breakout-extend] .urlbar-background {
-	/* background: var(--toolbar-field-focus-background-color) !important; */
+#urlbar[popover-open] .urlbar-background {
+	/* background: , #sidebar-panel-headervar(--toolbar-field-focus-background-color) !important; */
 }
 
 /*? urlbox backdrop */
-#urlbar[breakout-extend]::before{
-	content: '' !important;
+#urlbar[popover-open]::before{
+	content: '' !im, #sidebar-panel-headerportant;
 	width: 200vw !important;
 	height: 200vh !important;
 	position: fixed !important;
@@ -411,24 +418,24 @@
 }
 
 /*? urlbar bigger text */
-#urlbar[breakout-extend] #urlbar-input {
-	font-size: 1.4rem !important;
+#urlbar[popover-open] #urlbar-input {
+	font-size: 1.4r, #sidebar-panel-headerem !important;
 }
 
 /*? taller urlbar for bigger text when extended */
-#urlbar[breakout-extend] .urlbar-input-container {
-	height: 48px !important;
+#urlbar[popover-open] .urlbar-input-container {
+	height: 48px !i, #sidebar-panel-headermportant;
 }
 
 @media (max-width: 600px) {
-	#urlbar[breakout-extend] #urlbar-input {
-		font-size: 1.25rem !important;
+	#urlbar[popover-open] #urlbar-input {
+		font-size: 1.25, #sidebar-panel-headerrem !important;
 	}
 }
 
 /*? centered text when urlbar not in use */
-#urlbar:not(:is([breakout-extend])) #urlbar-input {
-	text-align: center !important;
+#urlbar:not(:is([popover-open])) #urlbar-input {
+	text-align: center !impo, #sidebar-panel-headerrtant;
 }
 
 /*? hide search one offs */
@@ -440,8 +447,8 @@
 
 /*? fix for floating urlbar */
 @media -moz-pref("shimmer.nightly") {
-	#urlbar:not([breakout-extend]) {
-		top: auto !important;
+	#urlbar:not([popover-open]) {
+		top: auto !importan, #sidebar-panel-headert;
 	}
 }
 
@@ -934,9 +941,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*! === sidebar === */
 
+/* nova fix */
+#sidebar-box {
+	padding-inline-start: unset !important;
+}
+
 /*? hide header, or give good color */
 @media not -moz-pref("shimmer.show-sidebar-header") {
-	#sidebar-header {
+	#sidebar-header, #sidebar-panel-header {
 		display: none !important;
 	}
 }
