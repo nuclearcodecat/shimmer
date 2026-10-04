@@ -44,7 +44,7 @@
 
 .activity-stream .logo-and-wordmark,
 .showPrivate .logo-and-wordmark {
-	margin-bottom: 24px !important;
+	margin-bottom: .5rem !important;
 }
 
 .activity-stream .wordmark,

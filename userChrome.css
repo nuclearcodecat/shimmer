@@ -12,7 +12,7 @@
 	--shimmer-cbar-expanded-width: 300px;
 
 	/*? urlbar border radius */
-	--shimmer-urlbar-rounding: 16px;
+	--shimmer-urlbar-rounding: 1rem;
 	--shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
 
 	/*? max tab width */
@@ -330,6 +330,19 @@
 
 /*! === navbar === */
 
+.urlbar-background, .urlbarView-background {
+	box-shadow: none !important;
+}
+
+.urlbarView-row-inner {
+	padding-inline: 0.2rem !important;
+	padding-block: 0.3rem !important;
+}
+
+.urlbarView-background {
+	border-radius: var(--shimmer-urlbar-rounding) !important;
+}
+
 /* nova fix: this was set to 50px before, no clue why, but it worked. */
 /* without it, the whole bar goes crazy when the popover closes. */
 /* it can even be 0px for this to work */
@@ -374,39 +387,39 @@
 
 @media not -moz-pref("shimmer.disable-popover-transition") {
 	#urlbar[popover-open] {
-		transition: mar, #sidebar-panel-headergin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+		transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
 
 	#urlbar {
-	transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+		transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
 }
 
 #urlbar[popover-open] {
-	z-index: 9999 !, #sidebar-panel-headerimportant;
+	z-index: 9999 !important;
 	left: 10% !important;
 	width: calc(100vw - 20%) !important;
 }
 
 @media not -moz-pref("shimmer.disable-urlbar-background-transition") {
 	#urlbar[popover-open] .urlbar-background {
-		transition: all, #sidebar-panel-header 0.1s linear !important;
+		transition: background 0.1s linear !important;
 	}
 }
 
 @media -moz-pref("shimmer.disable-urlbar-background-transition") {
 	#urlbar[popover-open] .urlbar-background {
-		transition: non, #sidebar-panel-headere !important;
+		transition: none !important;
 	}
 }
 
 #urlbar[popover-open] .urlbar-background {
-	/* background: , #sidebar-panel-headervar(--toolbar-field-focus-background-color) !important; */
+	/* background: var(--toolbar-field-focus-background-color) !important; */
 }
 
 /*? urlbox backdrop */
 #urlbar[popover-open]::before{
-	content: '' !im, #sidebar-panel-headerportant;
+	content: '' !important;
 	width: 200vw !important;
 	height: 200vh !important;
 	position: fixed !important;
@@ -419,23 +432,24 @@
 
 /*? urlbar bigger text */
 #urlbar[popover-open] #urlbar-input {
-	font-size: 1.4r, #sidebar-panel-headerem !important;
+	font-size: 1.4rem !important;
 }
 
 /*? taller urlbar for bigger text when extended */
 #urlbar[popover-open] .urlbar-input-container {
-	height: 48px !i, #sidebar-panel-headermportant;
+	/* height: 48px !important; */
+	outline: none !important;
 }
 
 @media (max-width: 600px) {
 	#urlbar[popover-open] #urlbar-input {
-		font-size: 1.25, #sidebar-panel-headerrem !important;
+		font-size: 1.25rem !important;
 	}
 }
 
 /*? centered text when urlbar not in use */
 #urlbar:not(:is([popover-open])) #urlbar-input {
-	text-align: center !impo, #sidebar-panel-headerrtant;
+	text-align: center !important;
 }
 
 /*? hide search one offs */
@@ -448,7 +462,7 @@
 /*? fix for floating urlbar */
 @media -moz-pref("shimmer.nightly") {
 	#urlbar:not([popover-open]) {
-		top: auto !importan, #sidebar-panel-headert;
+		top: auto !important;
 	}
 }
 
@@ -649,10 +663,11 @@ findbar:not([hidden]) {
 
 /*? make the go button bigger in urlbar */
 .urlbar-go-button {
-	height: 100% !important;
+	/* height: 100% !important; */
 	width: auto !important;
-	padding: 1.5% !important;
-	border-radius: var(--shimmer-urlbar-inner-rounding) !important;
+	padding: .4rem !important;
+	border-radius: .5rem !important;
+	height: auto !important;
 }
 
 
@@ -677,11 +692,6 @@ findbar:not([hidden]) {
 }
 .urlbarView-body-inner {
 	border: 0 !important;
-}
-
-/*? increase padding in urlbar */
-#urlbar-results {
-	padding-bottom: 8px !important;
 }
 
 /*? seamless transition */
@@ -1311,6 +1321,15 @@ treecol {
 	box-shadow: 0px 1px 3px 2px rgba(0,0,0,.15) !important;
 }
 
+/* additional nova fixes */
+
+:root {
+	--popup-border-radius: 1rem !important;
+}
+
+.subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+	border-radius: .6rem !important;
+}
 
 
 /* fullscreen top margin fix try */
