@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.40 */
+/*! SHIMMMER v2.41 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -343,10 +343,7 @@
 	border-radius: var(--shimmer-urlbar-rounding) !important;
 }
 
-/* nova fix: this was set to 50px before, no clue why, but it worked. */
-/* without it, the whole bar goes crazy when the popover closes. */
-/* it can even be 0px for this to work */
-#navigator-toolbox {
+#nav-bar {
 	height: 50px !important;
 }
 
@@ -850,8 +847,9 @@ tab-group {
 /*? make tab background round and small */
 .tab-background {
 	min-height: 0 !important;
-	border: solid 1px color-mix(in srgb, var(--tab-selected-bgcolor) 90%, #000);
+	border: solid 1px color-mix(in srgb, var(--tab-selected-bgcolor) 90%, #000) !important;
 	box-shadow: 0 0 0 #fff !important;
+	margin-block: 0.25rem !important;
 }
 
 /*? show tab close buttons when hovering tab */

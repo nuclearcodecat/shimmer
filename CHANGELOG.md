@@ -1,3 +1,7 @@
+# v2.41
+ - improved about:newtab's look
+ - fixed breakage introduced with firefox nova
+
 # v2.40
  - fixed broken statuspanel text color in private windows
  - fixed firefox v152's change which broke the background color of the broken out urlbar and some other browser backgrounds
