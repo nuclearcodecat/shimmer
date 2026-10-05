@@ -1256,13 +1256,55 @@ treecol {
 			list-style-image: none !important;
 			box-sizing: content-box !important;
 			padding: 0px !important;
-			background: var(--toolbarbutton-hover-background) !important;
+			background: var(--toolbarbutton-hover-background, color-mix(in srgb, currentColor 17%, transparent)) !important;
 		}
 
 		&:hover > image {
 			transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 		}
 	}
+	/* Firefox 157 (Nova): the window-control glyph moved from <image> to ::before
+	 * and the <image> child no longer exists, so the rules above match nothing and
+	 * the buttons render empty. Draw the dot on ::before instead (issue #79).
+	 * Browsers without :has() drop these rules and keep using the <image> rules. */
+	.titlebar-buttonbox > toolbarbutton:not(:has(image)) {
+		position: relative !important;
+	}
+	.titlebar-buttonbox > toolbarbutton:not(:has(image))::before {
+		display: block !important;
+		content: "" !important;
+		position: absolute !important;
+		top: 50% !important;
+		left: var(--shimmer-winctr-gap) !important;
+		width: 14px !important;
+		height: 14px !important;
+		border-radius: 12px !important;
+		box-sizing: content-box !important;
+		padding: 0px !important;
+		transform: translateY(-50%) !important;
+		transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+		background: var(--toolbarbutton-hover-background, color-mix(in srgb, currentColor 17%, transparent)) !important;
+	}
+	.titlebar-buttonbox > .titlebar-min:not(:has(image))::before {
+		left: calc(var(--shimmer-winctr-gap) + var(--shimmer-winctr-margin)) !important;
+	}
+	#toolbar-menubar .titlebar-buttonbox > toolbarbutton:not(:has(image)):hover::before {
+		padding: 2px 0 !important;
+	}
+	#TabsToolbar .titlebar-buttonbox > toolbarbutton:not(:has(image)):hover::before {
+		padding: 4px 0 !important;
+	}
+	.titlebar-close:not(:has(image)):hover::before {
+		background: #fc5753 !important;
+	}
+	.titlebar-min:not(:has(image)):hover::before {
+		background: #fdbc40 !important;
+	}
+	.titlebar-max:not(:has(image)):hover::before,
+	.titlebar-restore:not(:has(image)):hover::before {
+		background: #33c748 !important;
+	}
+
 	.titlebar-close {
 		/* background: hsl(355, 86%, 49%) url(chrome://browser/skin/window-controls/close.svg) no-repeat center !important; */
 		&:hover > image {
