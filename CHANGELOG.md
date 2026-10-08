@@ -1,3 +1,6 @@
+# v2.42
+ - fixed window control buttons on macos (#82)
+
 # v2.41
  - improved about:newtab's look
  - fixed breakage introduced with firefox nova
