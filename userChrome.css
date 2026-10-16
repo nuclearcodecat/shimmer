@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.42 */
+/*! SHIMMMER v2.43 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -110,9 +110,9 @@
 /*! === titlebar === */
 
 /*? fix theming issues */
-#main-window[titlepreface="​"] #nav-bar {
-	background: rgba(0, 0, 0, 0) !important;
-}
+/* #main-window[titlepreface="​"] #nav-bar { */
+	/* background: rgba(0, 0, 0, 0) !important; */
+/* } */
 
 .toolbarbutton-animatable-box>image {
 	/*? change reload button animation length */
@@ -271,11 +271,11 @@
 		/* background: var(--toolbar-background-color) !important; */
 	/* } */
 /* } */
-#main-window[titlepreface="​"]  {
-	& body {
-		background: var(--toolbar-background-color) !important;
-	}
-}
+/* #main-window[titlepreface="​"]  { */
+	/* & body { */
+		/* background: var(--toolbar-background-color) !important; */
+	/* } */
+/* } */
 
 /*? hide spacers when sidebery open */
 @media -moz-pref("shimmer.native-vertical-tabs") {
@@ -352,17 +352,21 @@
 }
 
 /*? rounded urlbar and box */
-:root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background {
-	background: rgba(0, 0, 0, 0) !important;
-	border: 0 !important;
-}
-:root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background {
+/* :root[chromehidden*="menubar toolbar directories extrachrome"] .urlbar-background { */
+	/* background: rgba(0, 0, 0, 0) !important; */
+	/* border: 0 !important; */
+/* } */
+/* :root:not([chromehidden*="menubar toolbar directories extrachrome"]) .urlbar-background { */
 	/* background: var(--toolbar-field-background-color) !important; */
-	border: 1px solid var(--toolbar-field-border-color) !important;
-}
+	/* border: 1px solid var(--toolbar-field-border-color) !important; */
+/* } */
 .urlbar-background {
 	border-radius: var(--shimmer-urlbar-rounding) !important;
 	transition: all 0.1s linear !important;
+}
+
+.urlbar-background, .urlbarView-background {
+	border: 1px solid var(--toolbar-field-border-color) !important;
 }
 
 /*? rounded buttons inside urlbar (firefox logo on about pages, padlock, trans, etc.) */
@@ -428,7 +432,7 @@
 	overflow: hidden !important;
 	top: -30vh !important;
 	left: -30vw !important;
-	background: color-mix(in srgb, var(--toolbar-background-color) 45%, rgba(0, 0, 0, 0)) !important;
+	background: color-mix(in srgb, var(--panel-background-color) 55%, rgba(0, 0, 0, 0)) !important;
 }
 
 /*? urlbar bigger text */
@@ -478,9 +482,9 @@
 }
 
 /*? make rounded borders have nice color */
-#browser {
-	background: var(--toolbar-background-color) !important;
-}
+/* #browser { */
+	/* background: var(--toolbar-background-color) !important; */
+/* } */
 
 /*? if popup window, make urlbar smaller and centered */
 #main-window[chromehidden*="toolbar"] #urlbar-container {
@@ -640,12 +644,17 @@ findbar:not([hidden]) {
 
 
 /*? compact private browsing indicator */
-#private-browsing-indicator-with-label > label, .private-browsing-indicator-label {
+/* #private-browsing-indicator-with-label > label, .private-browsing-indicator-label { */
+	/* display: none !important; */
+/* } */
+/* .private-browsing-indicator-icon { */
+	/* width: 24px !important; */
+	/* height: 24px !important; */
+/* } */
+
+/* remove private browsing indicator because it breaks colors */
+.private-browsing-indicator-button {
 	display: none !important;
-}
-.private-browsing-indicator-icon {
-	width: 24px !important;
-	height: 24px !important;
 }
 
 #PanelUI-menu-button {
@@ -1010,54 +1019,85 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? rounded browser on left edge */
 @media not -moz-pref("shimmer.native-vertical-tabs") {
-	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox .browserContainer {
 		border-radius: 0;
-		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+		/* clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius)); */
+		border-radius: var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius) !important;
 		overflow: hidden !important;
 	}
 }
 @media -moz-pref("shimmer.native-vertical-tabs") {
-	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox .browserContainer {
 		border-radius: 0;
-		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+		/* clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius)); */
+		border-radius: var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius) !important;
 		overflow: hidden !important;
 	}
 }
 
 /*? rounded sidebar on right edge */
 :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box {
-	clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+	/* clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0); */
+	border-radius: 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0 !important;
 	overflow: hidden !important;
 }
 @media -moz-pref("shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
-		clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+		/* clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0); */
+		border-radius: 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0 !important;
 	}
 }
 
+.sidebar-browser-stack {
+	overflow: clip !important;
+}
+
+.browserContainer, #sidebar-box {
+	border: solid 1px var(--toolbar-field-border-color) !important;
+}
+.browserContainer {
+	border-right: 0 !important;
+}
+#sidebar-box {
+	border-left: 0 !important;
+}
 @media -moz-pref("shimmer.sidebar-right-side") {
+	.browserContainer, #sidebar-box {
+		border: solid 1px var(--toolbar-field-border-color) !important;
+	}
+	.browserContainer {
+		border-left: 0 !important;
+	}
+	#sidebar-box {
+		border-right: 0 !important;
+	}
+
 	/*? rounded browser on right edge */
 	@media not -moz-pref("shimmer.native-vertical-tabs") {
-		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox .browserContainer {
 			border-radius: 0 !important;
-			clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+			/* clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0); */
+			border-radius: 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0 !important;
 		}
 	}
 	@media -moz-pref("shimmer.native-vertical-tabs") {
-		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
+		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox .browserContainer {
 			border-radius: 0 !important;
-			clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+			/* clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0); */
+			border-radius: 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0 !important;
 		}
 	}
 
 	/*? rounded sidebar on left edge */
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box {
 		border-radius: 0 !important;
-		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+		/* clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius)); */
+		border-radius: var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius) !important;
 	}
 	@media -moz-pref("shimmer.native-vertical-tabs") {
 		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
-			clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+			/* clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius)); */
+			border-radius: var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius) !important;
 		}
 	}
 }
@@ -1079,7 +1119,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: 0 !important;
-		z-index: 999 !important;
+		z-index: 2 !important;
 	}
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {

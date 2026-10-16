@@ -1,3 +1,6 @@
+# v2.43
+ - fixed most styling issues introduced with firefox nova
+
 # v2.42
  - fixed window control buttons on macos (#82)
 
