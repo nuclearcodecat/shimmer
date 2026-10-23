@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.43 */
+/*! SHIMMMER v2.44 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -54,13 +54,13 @@
 
 	/* tab group lighter colors */
 	--tab-group-color-blue: var(--color-blue-50) !important;
-  --tab-group-color-purple: var(--color-purple-50) !important;
-  --tab-group-color-cyan: var(--color-cyan-50) !important;
-  --tab-group-color-orange: var(--color-orange-50) !important;
-  --tab-group-color-yellow: var(--color-yellow-50) !important;
-  --tab-group-color-pink: var(--color-pink-50) !important;
-  --tab-group-color-green: var(--color-green-50) !important;
-  --tab-group-color-red: var(--color-red-50) !important;
+	--tab-group-color-purple: var(--color-purple-50) !important;
+	--tab-group-color-cyan: var(--color-cyan-50) !important;
+	--tab-group-color-orange: var(--color-orange-50) !important;
+	--tab-group-color-yellow: var(--color-yellow-50) !important;
+	--tab-group-color-pink: var(--color-pink-50) !important;
+	--tab-group-color-green: var(--color-green-50) !important;
+	--tab-group-color-red: var(--color-red-50) !important;
 }
 
 /*? customize context menu */
@@ -748,10 +748,10 @@ findbar:not([hidden]) {
 }
 
 /*? color the statuspanel */
-#statuspanel-label {
-	background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important;
+/* #statuspanel-label { */
+	/* background: var(--toolbar-background-color, var(--toolbar-non-lwt-bgcolor)) !important; */
 	/* color: var(--lwt-text-color) !important; */
-}
+/* } */
 
 #statuspanel, #statuspanel[type="overLink"] {
 	transition: opacity 75ms, visibility 75ms !important;
@@ -1052,26 +1052,39 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	overflow: clip !important;
 }
 
-.browserContainer, #sidebar-box {
-	border: solid 1px var(--toolbar-field-border-color) !important;
+/* margin around browser and sidebar */
+#sidebar-box, .browserContainer {
+	border: 0 !important;
 }
-.browserContainer {
-	border-right: 0 !important;
-}
-#sidebar-box {
-	border-left: 0 !important;
-}
-@media -moz-pref("shimmer.sidebar-right-side") {
+@media not -moz-pref("shimmer.disable-browser-border") {
 	.browserContainer, #sidebar-box {
 		border: solid 1px var(--toolbar-field-border-color) !important;
 	}
+
 	.browserContainer {
-		border-left: 0 !important;
-	}
-	#sidebar-box {
 		border-right: 0 !important;
 	}
 
+	#sidebar-box {
+		border-left: 0 !important;
+	}
+
+	@media -moz-pref("shimmer.sidebar-right-side") {
+		.browserContainer, #sidebar-box {
+			border: solid 1px var(--toolbar-field-border-color) !important;
+		}
+
+		.browserContainer {
+			border-left: 0 !important;
+		}
+
+		#sidebar-box {
+			border-right: 0 !important;
+		}
+	}
+}
+
+@media -moz-pref("shimmer.sidebar-right-side") {
 	/*? rounded browser on right edge */
 	@media not -moz-pref("shimmer.native-vertical-tabs") {
 		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox .browserContainer {
@@ -1119,7 +1132,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: 0 !important;
-		z-index: 2 !important;
+		z-index: 3 !important;
 	}
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {

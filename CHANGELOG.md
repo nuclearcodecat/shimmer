@@ -1,3 +1,8 @@
+# v2.44
+ - fixed statuspanel background color
+ - fixed sidebery appearing behind browser content (#84)
+ - new config property `shimmer.disable-browser-border`
+
 # v2.43
  - fixed most styling issues introduced with firefox nova
 
