@@ -101,6 +101,21 @@
 	display: none !important;
 }
 
+/*? remove search menu dropdown */
+#urlbar-searchmode-switcher {
+    padding-right: 0 !important;
+    background-color: transparent !important;
+}
+#urlbar-searchmode-switcher > * {
+    display: none;
+}
+
+#searchmode-switcher-chicklet {
+    margin-left: -6px !important;
+    padding-left: 12px !important;
+    border-radius: var(--toolbarbutton-border-radius);
+}
+
 /*? slim scrollbars everywhear!!!! */
 * {
 	scrollbar-width: thin !important;
