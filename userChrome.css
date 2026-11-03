@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.44 */
+/*! SHIMMMER v2.45 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -1057,7 +1057,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	border: 0 !important;
 }
 @media not -moz-pref("shimmer.disable-browser-border") {
-	.browserContainer, #sidebar-box {
+	:root:not([inDOMFullscreen]) .browserContainer, #sidebar-box {
 		border: solid 1px var(--toolbar-field-border-color) !important;
 	}
 
@@ -1070,7 +1070,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	}
 
 	@media -moz-pref("shimmer.sidebar-right-side") {
-		.browserContainer, #sidebar-box {
+		:root:not([inDOMFullscreen]) .browserContainer, #sidebar-box {
 			border: solid 1px var(--toolbar-field-border-color) !important;
 		}
 

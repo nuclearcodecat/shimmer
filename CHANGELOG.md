@@ -1,3 +1,6 @@
+# v2.45
+ - fixed browser border appearing around fullscreened window (#85)
+
 # v2.44
  - fixed statuspanel background color
  - fixed sidebery appearing behind browser content (#84)
